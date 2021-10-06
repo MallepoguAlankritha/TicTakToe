@@ -1,8 +1,10 @@
 package com.Alankritha;
 import java.util.Scanner;
+import java.util.Random;
 
 public class TikTacToeGame {
 	 static Scanner scanner = new Scanner(System.in);
+	 static Random ran = new Random();v
 	 static char [] board = new char[10];
 	 static char playerChoice;
 	 static char computerChoice;
@@ -68,12 +70,25 @@ public class TikTacToeGame {
 	            showBoard();
 	        }
 	    }
+	    /* In this we have taken a random menthod to do a toss between Player and Computer
+	       Winning candidate will play first.
+	     */
+	    static void tossToPlay() {
+	        System.out.println("Tossing To Check who Plays First");
+	        int toss = ran.nextInt(2);
+	        if (toss == 0) {
+	            System.out.println("Its Heads Player Plays first");
+	        } else {
+	            System.out.println("Its Tails Computer Plays first");
+	        }
+	    }
 	    public static void main(String[] args) {
 	        System.out.println("Welcome to Tic Tac Toe Game");
 	        createBoard();
 	        choose();
 	        showBoard();
 	        playerMove();
+	        scanner.close();
 	    }
 	}
 
