@@ -48,11 +48,19 @@ public class TikTacToeGame {
 	        System.out.println("-----------------");
 	        System.out.println(board[7] + "   |   " + board[8] + "   |   " + board[9]);
 	    }
+	    /* Ability for user to make a move to a desired location in the board
+	     */
 	    public static void playerMove(){
 	        System.out.print("Select Position in Index to Move in Board (1 to 9) : ");
 	        int indexNumber = scanner.nextInt();
 	        if (indexNumber < 1 && indexNumber > 9){
 	            System.out.println("You Entered Invalid Position ");
+	            playerMove();
+
+	        /* In this we are checking for empty space.
+	         */
+	        }else if(board[indexNumber] != ' ') {
+	            System.out.println("The Index is already occupied kindly choose other index ");
 	            playerMove();
 	        }
 	        else {
